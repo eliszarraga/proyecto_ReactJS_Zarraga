@@ -1,0 +1,20 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    background-color: grey;
+    color: lavender;
+}
+
+a {
+    color: cyan;
+    font-size: 22px;
+    margin: 5px 5px 5px 5px;
+}
