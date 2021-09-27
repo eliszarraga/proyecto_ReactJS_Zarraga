@@ -10,7 +10,7 @@ export const CartWidget = () => {
     return (
       <div>
         <Link to="/cart">
-          <p>cart</p>
+          <p>carrito</p>
           <span>{cantidadCart()}</span>
         </Link>
       </div>
