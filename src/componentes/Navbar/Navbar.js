@@ -1,23 +1,30 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
+import {CartWidget} from "../CartWidget/CartWidget"
 
 export const Navbar = () => {
+  return (
+    <header className="encabezado">
+      <Link to={"/"}>      
+        <h1> HOLO! </h1>
+      </Link>
 
-    return(
+      <nav>
 
-        <header className="encabezado">
+        <Link className="mx-1" to={"/category/computadoras"}>
+          COMPUTADORAS
+        </Link>
 
-            <h1> HOLO! </h1>
+        <Link className="mx-1" to={"/category/videojuegos"}>
+          VIDEOJUEGOS
+        </Link>
 
-            <nav className="enlaces">
+        <Link className="mx-1" to={"/category/accesorios"}>
+          ACCESORIOS
+        </Link>
 
-                <a href="#">TODO</a>
-                <a href="#">ELECTRODOMESTICOS</a>
-                <a href="#">OFICINAS</a>
-                <a href="#">GAMERS</a>
-
-            </nav>
-
-        </header>
-
-    );
-}
+      </nav>
+      <CartWidget/>
+    </header>
+  );
+};
