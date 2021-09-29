@@ -20,14 +20,17 @@ function App() {
             <Switch>
               <Route exact path="/">
                 <ItemListContainer />
+        
               </Route>
 
               <Route exact path="/category/:catId">
                 <ItemListContainer />
+        
               </Route>
 
               <Route exact path="/detail/:itemId">
                 <ItemDetailContainer />
+    
               </Route>
 
               <Route exact path="/cart">

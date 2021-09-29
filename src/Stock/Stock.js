@@ -5,7 +5,8 @@ export const stock = [
     nombre: "CPU LENOVO",
     precio: 80000,
     img: "http://via.placeholder.com/200",
-    stock: 100,
+    desc: "descripcion",
+    stock: 100
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ export const stock = [
     nombre: "Wii",
     precio: 65000,
     img: "http://via.placeholder.com/200",
-    stock: 80,
+    desc: "descripcion",
+    stock: 80
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ export const stock = [
     nombre: "CPU GAMING",
     precio: 92000,
     img: "http://via.placeholder.com/200",
-    stock: 50,
+    desc: "descripcion",
+    stock: 50
   },
   {
     id: 4,
@@ -29,15 +32,17 @@ export const stock = [
     nombre: "Xbox one",
     precio: 85000,
     img: "http://via.placeholder.com/200",
-    stock: 65,
+    desc: "descripcion",
+    stock: 65
   },
   {
     id: 5,
     category: "accesorios",
     nombre: "MONITOR HP",
     precio: 43000,
-    img: "http://via.placeholder.com/200",
-    stock: 12,
+    img: "img/monitorHP.png",
+    desc: "descripcion",
+    stock: 12
   },
   {
     id: 6,
@@ -45,7 +50,8 @@ export const stock = [
     nombre: "NINTENDO SWITCH",
     precio: 87500,
     img: "http://via.placeholder.com/200",
-    stock: 43,
+    desc: "descripcion",
+    stock: 43
   },
   {
     id: 7,
@@ -53,7 +59,8 @@ export const stock = [
     nombre: "NOTEBOOK SIRAGON",
     precio: 150000,
     img: "http://via.placeholder.com/200",
-    stock: 74,
+    desc: "descripcion",
+    stock: 74
   },
   {
     id: 8,
@@ -61,7 +68,8 @@ export const stock = [
     nombre: "TECLADO GAMING",
     precio: 15700,
     img: "http://via.placeholder.com/200",
-    stock: 93,
+    desc: "descripcion",
+    stock: 93
   },
   {
     id: 9,
@@ -69,6 +77,7 @@ export const stock = [
     nombre: "TECLADO ULTRA",
     precio: 20000,
     img: "http://via.placeholder.com/200",
-    stock: 100,
+    desc: "descripcion",
+    stock: 100
   },
 ];
