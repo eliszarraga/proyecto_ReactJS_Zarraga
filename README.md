@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+Proyecto E-Commerce en react de Elis Zarraga
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mi proyecto se trata de simular una tienda E-Commerce de productos electronicos y computacion. Con ella puedes simular la sleccion y compra de productos, y a su vez puedes verificar si hay stock o no de la misma.
 
-## Available Scripts
+Navegación
 
-In the project directory, you can run:
+La barra de navegación ofrece links de los productos segun las categorías de las mismas. Se renderiza las secciones por medio del componente ItemListContainer, que muestra diferentes productos aplicando un filtro de la base de datos y los productos son, en realidad, el componente Item. La categoría a filtrar se toma usando useParams().
 
-### `npm start`
+Item - ItemDetail
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Cada uno de los productos (Item) tiene la opción de INFORMACION, el cual, redirecciona al ItemDetail, donde permite mostrar detalles del producto y la opción para agregar al carrito. A su vez, renderiza el ItemDetailContainer, que toma el ID del producto seleccionado usando la funcion "useParams()", asi realizando un pedido a la base de datos del dicho producto. Concluyendo, se renderiza el componente ItemDetail que muestra el detalle del producto y la opción de agregar al carrito, ajustando la cantidad al stock que se encuentre disponible que este ingresado en la base de datos.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Cart
 
-### `npm test`
+Despues de seleccionar el producto y agregarlo al carrito, en el navbar, se hace visible el Cart con la cantidad de prouctos que ha seleccionado anteriormente. al ir al link del carrito, podra vizualizar los prodcutos seleccionados junto con las cantidades sumando el precio del producto seleccionado. Cuenta tambien con la posibilidad de eliminar el producto dentro del carrito y de continuar con la compra.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cart Context
 
-### `npm run build`
+Todo el proceso anteriormente mencionados estan intercomunicados por el contexto "newContext", el cual reune la informacion que esta en el carrito, lo que esta seleccionado y, a su vez, permiter distintos metodos para limpiar el carrito y calcular el total de las cantidades de los productos.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Firebase
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Cabe destacar que los productos que se muestran en la tienda están cargados en "Firebase-Firestore", el cual, cada uno contiene las siguentes propiedades: CATEGORIA, NOMBRE, DESCRIPCION, PRECIO, IMAGEN Y STOCK (Tambien esta el ID que lo proporciona Firestore).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+generateOrdens
 
-### `npm run eject`
+Este toma la informacion que esta almacenado en el Cart, los dats del cliente y genera una ORDEN DE COMPRA el cual se carga y se sube a Firebase. Igualmente, puede verificar si hay stock del producto antes de confirmar. Esta funcion hace retornar a una promesa que, si clumple con las verifficaciones, retorna el ID de la orden que se genero y se sube a Firebase: pero sino cumple con las verificaciones, arroja un Alert mencionando que no hay stock de producto y no genera la orden de compra.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+CHECKOUT
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Al finalizar la compra en el carrito se redirecciona a CHECKOUT el cual se renderiza dicho componente. Este se va renderizando segun las condiciones: Pide datos del comprador para poder continuar con la compra, el cual, tiene la posibilidad de manipular el formulario y verificacion de la informacion que se ingreso. si algun campo no esta rellenado o que sean invalidos, se mostrara un mensaje de error. si los datos estan correctos y validos, se mostrara un mensaje que su compra fue un exito, indicando el numero de compra generado por la misma base de datos Firebase, que a su vez, esta estara guardadaen dicha base de datos.
