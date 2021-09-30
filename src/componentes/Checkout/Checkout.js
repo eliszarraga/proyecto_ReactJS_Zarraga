@@ -62,8 +62,11 @@ export const Checkout = () => {
       {!cart.length ? (
         <Redirect to="/" />
       ) : (
-        <div>
-          <form className="container" onSubmit={handleSubmit}>
+        <div className="container col-10">
+          <form className="container row col-3 justify-center" onSubmit={handleSubmit}>
+
+            <h4>NOMBRE</h4>
+
             <input
               type="text"
               value={values.nombre}
@@ -71,6 +74,8 @@ export const Checkout = () => {
               name="nombre"
               required
             />
+
+            <h4>APELLIDO</h4>
 
             <input
               type="text"
@@ -80,6 +85,10 @@ export const Checkout = () => {
               required
             />
 
+            <hr/>
+
+            <h4>EDAD</h4>
+
             <input
               type="number"
               value={values.edad}
@@ -87,6 +96,10 @@ export const Checkout = () => {
               name="edad"
               required
             />
+
+            <hr/>
+
+            <h4>CORREO ELECTRONICO</h4>
 
             <input
               type="email"
@@ -96,6 +109,10 @@ export const Checkout = () => {
               required
             />
 
+            <hr/>
+
+            <h4>TELEFONO</h4>
+
             <input
               type="number"
               value={values.tel}
@@ -104,7 +121,11 @@ export const Checkout = () => {
               required
             />
 
-            <button type="submit">Submit</button>
+            <hr/>
+
+            <button type="submit" className="btn btn-success">Submit</button>
+
+            <hr/>
           </form>
         </div>
       )}

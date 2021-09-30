@@ -37,3 +37,7 @@ a {
 .card {
   justify-content: space-between;
 }
+
+.letrasNavBar{
+  color: white;
+}

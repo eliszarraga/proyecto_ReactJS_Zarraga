@@ -5,21 +5,21 @@ import {CartWidget} from "../CartWidget/CartWidget"
 export const Navbar = () => {
   return (
     <header className="encabezado">
-      <Link to={"/"}>      
+      <Link className="btn btn-outline-dark" to={"/"}>      
         <h1> HOLO! </h1>
       </Link>
 
       <nav>
 
-        <Link className="mx-1" to={"/category/computadoras"}>
+        <Link className="mx-1 btn btn-dark" to={"/category/computadoras"}>
           COMPUTADORAS
         </Link>
 
-        <Link className="mx-1" to={"/category/videojuegos"}>
+        <Link className="mx-1 btn btn-secondary" to={"/category/videojuegos"}>
           VIDEOJUEGOS
         </Link>
 
-        <Link className="mx-1" to={"/category/accesorios"}>
+        <Link className="mx-1 btn btn-dark" to={"/category/accesorios"}>
           ACCESORIOS
         </Link>
 
